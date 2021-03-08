@@ -43,23 +43,37 @@ class _HomePageState extends State<HomePage> {
     String src =
         "https://images.unsplash.com/photo-1615122131340-354f40914720?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60";
     return Scaffold(
+      backgroundColor: Colors.deepPurpleAccent,
       body: Center(
-        child: Material(
+        child: Card(
           elevation: 50.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+          ),
           child: AnimatedContainer(
             decoration: BoxDecoration(
-                color: Colors.tealAccent,
-                // borderRadius: BorderRadius.circular(50),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50))),
+              color: Colors.tealAccent,
+              borderRadius: BorderRadius.circular(50),
+              border: Border.all(width: 4, color: Colors.pink),
+              image: DecorationImage(
+                image: NetworkImage(src),
+                fit: BoxFit.cover,
+              ),
+            ),
             duration: Duration(milliseconds: 300),
             curve: Curves.bounceInOut,
             width: _width,
             height: _height,
-            // child: Image.network(
-            //   src,
-            //   fit: BoxFit.cover,
-            // ),
+            child: Center(
+              child: Text(
+                "Hi!",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 50.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ),
         ),
       ),
