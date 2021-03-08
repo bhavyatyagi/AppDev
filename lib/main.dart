@@ -40,14 +40,27 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    String src =
+        "https://images.unsplash.com/photo-1615122131340-354f40914720?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60";
     return Scaffold(
       body: Center(
-        child: AnimatedContainer(
-          duration: Duration(milliseconds: 300),
-          curve: Curves.bounceInOut,
-          color: Colors.tealAccent,
-          width: _width,
-          height: _height,
+        child: Material(
+          elevation: 50.0,
+          child: AnimatedContainer(
+            decoration: BoxDecoration(
+                color: Colors.tealAccent,
+                // borderRadius: BorderRadius.circular(50),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50))),
+            duration: Duration(milliseconds: 300),
+            curve: Curves.bounceInOut,
+            width: _width,
+            height: _height,
+            // child: Image.network(
+            //   src,
+            //   fit: BoxFit.cover,
+            // ),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
